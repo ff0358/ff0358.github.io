@@ -292,6 +292,16 @@ h4{
 	padding: 10px;
 	display: inline-block;
 }
+
+/* ------------------------ CLASS CONTACT --------------------------------------- */
+
+   .email-container {
+      display: flex;
+ 
+      align-items: center;
+	  justify-content: space-evenly;
+    }
+
     .email-link {
       display: inline-block;
       padding: 10px 20px;
@@ -305,6 +315,23 @@ h4{
 
     .email-link:hover {
       background-color: #0d47a1;
+    }
+
+    .website-link {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .website-link img {
+      max-width: 100%;
+	  width:200px;
+    }
+	.mailto-envelope {
+		margin-right: 5px;
+		padding:10px;
+		font-size: 20px;
+		}
+
     }
 
 /* ------------------ MEDIA QUERIES -----------------------*/
@@ -428,7 +455,7 @@ h4{
 	font-size:12px;
 	}
     .title{
-    font-size: 30px; 
+    font-size: 20px; 
     padding:40px 10px;  
 
     
@@ -484,5 +511,12 @@ h4{
 	.contact-list p{
         font-size: 13px;
     }
+	    .email-container {
+        flex-direction: column;
+      }
+
+      .website-link {
+        margin-top: 20px;
+      }
 
 }
