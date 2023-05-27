@@ -147,31 +147,32 @@ Demain, dès l'aube, à l'heure où blanchit la campagne, Je partirai. Vois-tu, 
 
 
 <script>
+// Function to change the font size of paragraphs
 function changeParagraphFont() {
-  // Récupérer la taille de police sélectionnée pour les paragraphes
   var selectedSize = document.getElementById("paragraph-font-size").value;
-
-  // Récupérer tous les éléments <p>
   var paragraphs = document.getElementsByTagName("p");
 
-  // Parcourir les éléments <p> et leur attribuer la nouvelle taille de police
   for (var i = 0; i < paragraphs.length; i++) {
     paragraphs[i].style.fontSize = selectedSize + "px";
   }
 }
 
+// Function to change the font size of headings
 function changeHeadingFont() {
-  // Récupérer la taille de police sélectionnée pour les titres <h1>
   var selectedSize = document.getElementById("heading-font-size").value;
-
-  // Récupérer tous les éléments <h1>
   var headings = document.getElementsByTagName("h1");
 
-  // Parcourir les éléments <h1> et leur attribuer la nouvelle taille de police
   for (var i = 0; i < headings.length; i++) {
     headings[i].style.fontSize = selectedSize + "px";
   }
 }
+
+// Trigger font change functions on page load
+window.onload = function() {
+  changeParagraphFont();
+  changeHeadingFont();
+};
+
 </script>
 </body>
 </html>
