@@ -9,7 +9,8 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Garamond">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant Garamond">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB Garamond">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre Baskerville">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic SC">
@@ -40,6 +41,13 @@
   <option value="40">40px</option>
 </select>
 </div>
+<div class="menu">
+<p>épaisseur</p>
+<select id="font-weight" onchange="changeFontWeight()">
+  <option value="normal">Normal</option>
+  <option value="bold">Bold</option>
+</select>
+</div>
 
 <div class="baskerville">
 <h1>Baskerville</h1>
@@ -54,7 +62,13 @@ Demain, dès l'aube, à l'heure où blanchit la campagne, Je partirai. Vois-tu, 
 </p>
 </div>
 <div class="garamond">
-<h1>Garamond</h1>
+<h1>Cormorant Garamond</h1>
+<p>
+Demain, dès l'aube, à l'heure où blanchit la campagne, Je partirai. Vois-tu, je sais que tu m'attends. J'irai par la forêt, j'irai par la montagne.
+</p>
+</div>
+<div class="ebgaramond">
+<h1>EB Garamond</h1>
 <p>
 Demain, dès l'aube, à l'heure où blanchit la campagne, Je partirai. Vois-tu, je sais que tu m'attends. J'irai par la forêt, j'irai par la montagne.
 </p>
@@ -166,11 +180,32 @@ function changeHeadingFont() {
     headings[i].style.fontSize = selectedSize + "px";
   }
 }
+function changeFontWeight() {
+  // Récupérer le poids sélectionné dans le menu déroulant
+  var selectedWeight = document.getElementById("font-weight").value;
+
+  // Récupérer tous les éléments <p>
+  var paragraphs = document.getElementsByTagName("p");
+
+  // Récupérer tous les éléments <h1>
+  var headings = document.getElementsByTagName("h1");
+
+  // Parcourir les éléments <p> et leur attribuer le nouveau poids de police
+  for (var i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.fontWeight = selectedWeight;
+  }
+
+  // Parcourir les éléments <h1> et leur attribuer le nouveau poids de police
+  for (var i = 0; i < headings.length; i++) {
+    headings[i].style.fontWeight = selectedWeight;
+  }
+}
 
 // Trigger font change functions on page load
 window.onload = function() {
   changeParagraphFont();
   changeHeadingFont();
+  changeFontWeight();
 };
 
 </script>
