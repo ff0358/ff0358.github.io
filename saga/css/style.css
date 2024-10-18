@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'ITC Goudy Sans';
+    src : url('../font/ITC Goudy Sans Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+div,h2 {
+    font-family: 'ITC Goudy Sans';
+  }
+ .title {
+    font-weight: bold;
+ }
