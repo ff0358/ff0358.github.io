@@ -162,6 +162,10 @@ body {
     .content p {
         font-size: 1rem;
     }
+
+    .image-container img {
+        width: 95% !important; /* Force l'agrandissement sur mobile */
+    }
 }
 
 /*
@@ -289,10 +293,6 @@ Styles pour la page "À Propos"
 
     .contact-item {
         justify-content: center;
-    }
-
-    .image-container img {
-        width: 95%; /* Agrandit l'image sur mobile */
     }
 }
 
