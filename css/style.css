@@ -101,13 +101,17 @@ body {
     margin: auto;
 }
 
-.image-container img {
+.image-container .desktop-image {
     width: 70%;
     height: auto;
-    display: block;
+    display: block; /* Visible sur PC */
     margin: 0 auto;
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.image-container .mobile-image {
+    display: none; /* Caché sur PC */
 }
 
 /* --- Page "Qui suis-je ?" --- */
@@ -400,8 +404,16 @@ body {
     }
 
     /* --- Page d'accueil --- */
-    .image-container img {
-        width: 95%;
+    .image-container .desktop-image {
+        display: none; /* Caché sur mobile */
+    }
+    .image-container .mobile-image {
+        width: 95% !important; /* Visible et agrandi sur mobile */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     }
 
     /* --- Page "Qui suis-je ?" --- */
