@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue - Mon Site</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html"><img src="signature.jpg" alt="Signature"></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="about.html">Qui suis-je ?</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main class="container catalogue-page">
+        <div class="photo-viewer">
+            <div class="main-image-container">
+                <img id="main-image" src="marylin.jpg" alt="Image principale du catalogue">
+            </div>
+            <div class="thumbnails-container">
+                <div class="thumbnail active" 
+                     data-src="marylin.jpg" 
+                     data-title="Marilyn Pop"
+                     data-dimension="80x80 cm" 
+                     data-description="Portrait iconique de Marilyn Monroe, réalisé à l'acrylique sur toile avec une touche pop art."
+                     data-price="1200">
+                    <img src="marylin.jpg" alt="Marilyn Monroe">
+                </div>
+                <div class="thumbnail"
+                     data-src="bugs.jpg"
+                     data-title="Bugs"
+                     data-dimension="50x50 cm"
+                     data-description="Description pour le tableau Bugs."
+                     data-price="500">
+                    <img src="bugs.jpg" alt="Bugs">
+                </div>
+                <div class="thumbnail"
+                     data-src="doors.jpg"
+                     data-title="Doors"
+                     data-dimension="100x70 cm"
+                     data-description="Description pour le tableau Doors."
+                     data-price="800">
+                    <img src="doors.jpg" alt="Doors">
+                </div>
+                <div class="thumbnail"
+                     data-src="king.jpg"
+                     data-title="King"
+                     data-dimension="90x90 cm"
+                     data-description="Description pour le tableau King."
+                     data-price="1100">
+                    <img src="king.jpg" alt="King">
+                </div>
+                <div class="thumbnail"
+                     data-src="peace.jpg"
+                     data-title="Peace"
+                     data-dimension="70x70 cm"
+                     data-description="Description pour le tableau Peace."
+                     data-price="650">
+                    <img src="peace.jpg" alt="Peace">
+                </div>
+                <div class="thumbnail"
+                     data-src="moine.jpg"
+                     data-title="Moine"
+                     data-dimension="60x80 cm"
+                     data-description="Description pour le tableau Moine."
+                     data-price="900">
+                    <img src="moine.jpg" alt="Moine">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
