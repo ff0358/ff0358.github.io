@@ -11,20 +11,24 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #121212;
+    /*background-color: #121212;*/
+    background-color: #faf8f8;
     color: #EAEAEA;
-    /* Le padding-top évite que le contenu passe sous le header fixe */
     padding-top: 70px; 
 }
 
-/* Header principal */
+/* =================================
+   STYLES DE BASE (PC & TABLETTE)
+   ================================= */
+
+/* --- Header --- */
 .main-header {
     background-color: #ffffff;
     color: #121212;
     padding: 0 2rem;
     height: 70px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Changé pour permettre le centrage du nav */
     align-items: center;
     position: fixed;
     top: 0;
@@ -34,6 +38,11 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.main-nav {
+    margin: 0 auto; /* Centre le menu de navigation */
+}
+
+
 .logo a {
     color: #121212;
     text-decoration: none;
@@ -41,7 +50,12 @@ body {
     font-weight: bold;
 }
 
-/* Navigation principale (PC) */
+.logo img {
+    height: 90px;
+    width: auto;
+    display: block;
+}
+
 .main-nav ul {
     display: flex;
     list-style: none;
@@ -52,10 +66,11 @@ body {
 }
 
 .main-nav a {
+    font-family: 'Open Sans', sans-serif; /* Nouvelle police */
+    font-weight: 400; /* Non gras (Regular) */
     color: #121212;
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
     transition: color 0.3s ease;
 }
 
@@ -63,121 +78,43 @@ body {
     color: #555555;
 }
 
-/* Contenu principal */
+.hamburger {
+    display: none;
+}
+
+/* --- Contenu Principal --- */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: calc(100vh - 70px); /* Hauteur de la vue moins le header */
+    min-height: calc(100vh - 70px);
     width: 100%;
     padding: 2rem;
+    background-color: white;
 }
 
-.content h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+/* --- Page d'accueil --- */
+.image-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.content p {
-    font-size: 1.2rem;
-    color: #A0A0A0;
-    margin-bottom: 2rem;
-}
-
-/* Bouton Hamburger (caché sur PC) */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.hamburger span {
+.image-container img {
+    width: 70%;
+    height: auto;
     display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #121212;
-    margin: 5px 0;
-    transition: all 0.3s ease-in-out;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive pour Smartphones */
-@media (max-width: 768px) {
-    .main-nav {
-        display: none; /* Cache le menu par défaut */
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .main-nav.is-active {
-        display: block; /* Affiche le menu quand il est actif */
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        padding: 1rem 0;
-    }
-
-    .main-nav li {
-        margin: 0;
-        text-align: center;
-    }
-
-    .main-nav a {
-        display: block;
-        padding: 1rem;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    
-    .main-nav li:last-child a {
-        border-bottom: none;
-    }
-
-    .hamburger {
-        display: block; /* Affiche le bouton hamburger */
-    }
-
-    /* Animation du hamburger en croix */
-    .hamburger.is-active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.is-active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.is-active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .content h1 {
-        font-size: 2.2rem;
-    }
-
-    .content p {
-        font-size: 1rem;
-    }
-
-    .image-container img {
-        width: 95% !important; /* Force l'agrandissement sur mobile */
-    }
-}
-
-/*
-=================================
-Styles pour la page "À Propos"
-=================================
-*/
-
+/* --- Page "Qui suis-je ?" --- */
 .about-page.container {
     display: block;
     text-align: left;
-    max-width: 900px; /* Limite la largeur pour une meilleure lisibilité */
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -192,21 +129,21 @@ Styles pour la page "À Propos"
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    overflow: hidden; /* Masque les parties de l'image qui dépassent du cercle */
+    overflow: hidden;
     margin-right: 3rem;
-    flex-shrink: 0; /* Empêche l'image de rétrécir */
+    flex-shrink: 0;
 }
 
 .profile-picture img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Assure que l'image remplit le cercle sans être déformée */
+    object-fit: cover;
 }
 
 .profile-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #A0A0A0;;
 }
 
 .profile-text p {
@@ -258,7 +195,7 @@ Styles pour la page "À Propos"
     width: 20px;
     height: 20px;
     margin-right: 1rem;
-    stroke: #A0A0A0; /* Color for the icon */
+    stroke: #A0A0A0;
     flex-shrink: 0;
 }
 
@@ -272,69 +209,7 @@ Styles pour la page "À Propos"
     color: #EAEAEA;
 }
 
-/* Responsive pour la page "À Propos" */
-@media (max-width: 768px) {
-    .about-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-        margin-right: 0;
-        margin-bottom: 2rem;
-    }
-
-    .profile-text h2 {
-        font-size: 2rem;
-    }
-
-    .contact-item {
-        justify-content: center;
-    }
-}
-
-/*
-=================================
-Styles for Homepage Image
-=================================
-*/
-
-.image-container {
-    width: 100%;
-    max-width: 1200px; /* Adjust as needed */
-    margin: auto;
-}
-
-.image-container img {
-    width: 70%; /* Largeur de l'image à 70% de son conteneur */
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Centre l'image horizontalement */
-    border-radius: 8px; /* Optional: adds slightly rounded corners */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Optional: adds some depth */
-}
-
-/*
-=================================
-Styles for Logo Image
-=================================
-*/
-
-.logo img {
-    height: 90px; /* Augmentation de la taille, dépassement intentionnel */
-    width: auto;
-    display: block;
-}
-
-/*
-=================================
-Styles for Catalogue Page
-=================================
-*/
-
+/* --- Page Catalogue --- */
 .catalogue-page.container {
     display: block;
     max-width: 1000px;
@@ -360,7 +235,7 @@ Styles for Catalogue Page
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    cursor: pointer; /* Indique que l'image est cliquable */
+    cursor: pointer;
 }
 
 .thumbnails-container {
@@ -371,21 +246,17 @@ Styles for Catalogue Page
     border-radius: 8px;
 }
 
-/* Custom scrollbar for webkit browsers */
 .thumbnails-container::-webkit-scrollbar {
     height: 8px;
 }
-
 .thumbnails-container::-webkit-scrollbar-track {
     background: #222;
     border-radius: 4px;
 }
-
 .thumbnails-container::-webkit-scrollbar-thumb {
     background: #555;
     border-radius: 4px;
 }
-
 .thumbnails-container::-webkit-scrollbar-thumb:hover {
     background: #777;
 }
@@ -411,12 +282,7 @@ Styles for Catalogue Page
     border-color: #fff;
 }
 
-/*
-=================================
-Styles for Detail Page
-=================================
-*/
-
+/* --- Page de Détail --- */
 .detail-page.container {
     display: block;
     max-width: 1200px;
@@ -431,7 +297,7 @@ Styles for Detail Page
 }
 
 .detail-image-container {
-    flex: 1 1 60%; /* Takes up 60% of the width */
+    flex: 1 1 60%;
 }
 
 #detail-image {
@@ -441,7 +307,7 @@ Styles for Detail Page
 }
 
 .detail-info {
-    flex: 1 1 40%; /* Takes up 40% of the width */
+    flex: 1 1 40%;
     color: #EAEAEA;
 }
 
@@ -468,8 +334,97 @@ Styles for Detail Page
     color: #fff;
 }
 
-/* Responsive for Detail Page */
+
+/* =================================
+   STYLES RESPONSIVES (SMARTPHONE)
+   ================================= */
+
 @media (max-width: 768px) {
+
+    /* --- Styles Généraux --- */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .main-nav.is-active {
+        display: block;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    .main-nav li {
+        margin: 0;
+        text-align: center;
+    }
+    .main-nav a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .main-nav li:last-child a {
+        border-bottom: none;
+    }
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    .main-header {
+        justify-content: space-between; /* Aligne le logo à gauche et le hamburger à droite */
+    }
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #121212;
+        margin: 5px 0;
+        transition: all 0.3s ease-in-out;
+    }
+    .hamburger.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- Page d'accueil --- */
+    .image-container img {
+        width: 95%;
+    }
+
+    /* --- Page "Qui suis-je ?" --- */
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+    .profile-text h2 {
+        font-size: 2rem;
+        color:#A0A0A0;
+    }
+    .contact-item {
+        justify-content: center;
+    }
+
+    /* --- Page de Détail --- */
     .detail-layout {
         flex-direction: column;
     }
