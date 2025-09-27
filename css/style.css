@@ -444,6 +444,16 @@ body {
     .detail-info h1 {
         font-size: 2rem;
     }
+
+    /* --- Page Portfolio --- */
+    .portfolio-page .page-title {
+        display: none;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 /* Portfolio Grid */
@@ -472,13 +482,6 @@ body {
     margin-bottom: 2rem;
     font-size: 2rem;
     color: #333;
-}
-
-/* Responsive layout for mobile */
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Close button on detail page */
