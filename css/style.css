@@ -94,6 +94,10 @@ body {
     background-color: white;
 }
 
+.portfolio-page.container {
+    flex-direction: column;
+}
+
 /* --- Page d'accueil --- */
 .image-container {
     width: 100%;
@@ -446,9 +450,6 @@ body {
     }
 
     /* --- Page Portfolio --- */
-    .portfolio-page .page-title {
-        display: none;
-    }
     .portfolio-grid {
         grid-template-columns: 1fr;
         width: 90%;
