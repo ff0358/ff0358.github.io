@@ -89,4 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('detail-price').textContent = `${price} €`;
         }
     }
+
+    // --- Close button on detail page ---
+    const closeButton = document.querySelector('.close-button');
+    if (closeButton) {
+        closeButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            history.back();
+        });
+    }
 });
