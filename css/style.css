@@ -348,6 +348,55 @@ body {
    STYLES RESPONSIVES (SMARTPHONE)
    ================================= */
 
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item a:hover img {
+    transform: scale(1.05);
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Close button on detail page */
+.close-button {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    font-size: 2.5rem;
+    color: #333;
+    text-decoration: none;
+    line-height: 1;
+    padding: 1rem;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+
+/* =================================
+   STYLES RESPONSIVES (SMARTPHONE)
+   ================================= */
+
 @media (max-width: 768px) {
 
     /* --- Styles Généraux --- */
@@ -455,48 +504,4 @@ body {
         width: 90%;
         margin: 0 auto;
     }
-}
-
-/* Portfolio Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item a:hover img {
-    transform: scale(1.05);
-}
-
-.page-title {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    color: #333;
-}
-
-/* Close button on detail page */
-.close-button {
-    position: absolute;
-    top: 0rem;
-    right: 0rem;
-    font-size: 2.5rem;
-    color: #333;
-    text-decoration: none;
-    line-height: 1;
-    padding: 1rem;
-}
-
-.close-button:hover {
-    color: #000;
 }
